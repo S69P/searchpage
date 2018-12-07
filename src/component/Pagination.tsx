@@ -12,12 +12,12 @@ export default class Pagination extends React.Component<IPaginationProps, any> {
     return (
       <nav >
         <ul className="pagination">
-          <li onClick={this.getAction} value="first" className="page-item">
+          <li onClick={this.props.prev ? this.props.pagination : null} value="first" className="page-item">
             <a className={this.props.prev ? "page-link" : "page-link disabled"} >
               <span >&laquo;</span>
             </a>
           </li>
-          <li onClick={this.getAction} value="prev" className="page-item">
+          <li onClick={this.props.prev ? this.props.pagination : null} value="prev" className="page-item">
             <a className={this.props.prev ? "page-link" : "page-link disabled"}>
               <span>&lt;</span>
             </a>
@@ -36,10 +36,10 @@ export default class Pagination extends React.Component<IPaginationProps, any> {
       </nav>
     );
   }
-  private getAction:() => any = () =>{
-    return (this.props.prev ? this.props.pagination : null)
-  }
+  // private getAction:() => any = () =>{
+  //   return (this.props.prev ? this.props.pagination : null)
+  // }
   // private getClass:() => any = () =>{
-  //   return 
+  //   return this.props.prev ? "page-link" : "page-link disabled"
   // }
 }
