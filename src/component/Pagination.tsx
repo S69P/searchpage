@@ -39,7 +39,7 @@ export default class Pagination extends React.Component<IPaginationProps, any> {
   private getAction:() => any = () =>{
     return (this.props.prev ? this.props.pagination : null)
   }
-  private getClass:() => any = () =>{
-    return this.props.prev ? "page-link" : "page-link disabled"
-  }
+  // private getClass:() => any = () =>{
+  //   return this.props.prev ? "page-link" : "page-link disabled"
+  // }
 }
