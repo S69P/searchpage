@@ -1,13 +1,8 @@
+## Página de busca
+
 Single Page Application.  Listagem de produtos com um campo de busca, paginação e um seletor de quantidade de itens a serem exibidos. [Search Page](add here).
 
 
-## Página de busca
-
-Create React App is divided into two packages:
-
-
-
-For the project to build, **these files must exist with exact filenames**:
 
 
 ## Instalação
