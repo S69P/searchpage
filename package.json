@@ -2,6 +2,10 @@
   "name": "search",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "yarn": "1.9.4",
+    "node": "10.9.0"
+  },
   "dependencies": {
     "@types/lodash.debounce": "^4.0.4",
     "axios": "^0.18.0",
