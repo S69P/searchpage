@@ -13,12 +13,12 @@ export default class Pagination extends React.Component<IPaginationProps, any> {
       <nav >
         <ul className="pagination">
           <li onClick={this.getAction} value="first" className="page-item">
-            <a className={this.getClass()} >
+            <a className={"page-link"} >
               <span >&laquo;</span>
             </a>
           </li>
           <li onClick={this.getAction} value="prev" className="page-item">
-            <a className={this.getClass()}>
+            <a className={"page-link"}>
               <span>&lt;</span>
             </a>
           </li>
