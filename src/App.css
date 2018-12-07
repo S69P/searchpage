@@ -1,0 +1,212 @@
+.App {
+  
+  font-family: -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+   
+  font-weight: lighter;	 
+}
+
+
+/* Header */
+.header{
+  height: 80px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.logo{
+  align-items: flex-start;
+  padding-left: 30px;
+  flex: 1;
+}
+.logo-mm{
+  height: 20px;
+}
+
+
+
+/* Search input */
+
+
+
+input[type=search] {
+  outline: none;
+  height:10px;
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+  font-size: 100%;
+  
+}
+input[type=search] {
+	background: #eeedf1 url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	width: 100px;
+	
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+  transition: all .5s;
+  flex: 1;
+  margin-right: 50px;
+}
+input[type=search]:focus {
+	width: 300px;
+	background-color: #fff;
+	border-color:hsl(255, 33%, 93%);
+	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+input:-moz-placeholder {
+	color: #999;
+}
+input::-webkit-input-placeholder {
+	color: #999;
+}
+
+
+
+
+/* Search query */
+.query-term{
+  color:#433e66;
+  font-size: 45px;
+  padding: 15px 0px 15px 30px;
+  margin: 0 0 0 0;
+}
+.query{
+  background-color: #eeedf1;
+  text-align: left;
+  border-color:hsl(255, 33%, 93%);
+  border-style: solid;
+}
+
+
+
+
+/* Results */
+.products-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.product{
+  height: 220px;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  max-width: 850px;
+}
+
+.product-image{
+  width: 190px;
+  height: 190px;
+  flex: 0; 
+  align-self: center;
+  padding-left: 12px;
+
+}
+
+.product-name{
+  font-weight: 450;
+  flex: 2; 
+  align-self: center;
+  margin-left: 15px;
+  max-width: 400px;
+}
+.product-name h4 {
+  
+  margin-bottom: 5px;
+  margin-top: 0px;
+  
+}
+.product-name p {
+  
+  margin-top: 5px;
+  
+
+}
+.product-description{
+  font-weight:  lighter;
+  height: 105px;
+  overflow: hidden;
+  text-overflow: clip;
+  font-size: .8em;
+  padding-right: 30px;
+  
+}
+.product-price{
+  flex: 1; 
+  align-self: center;
+  font-weight:  450;
+  width: 188px;
+}
+
+.productsFound{
+  align-self: flex-start;
+  margin-left: 35px;
+  max-width: 230px;
+}
+.productsFoundText{
+  margin-bottom: 2px;
+}
+
+.golden-line{
+  margin-top: 0;
+  border:none;
+  background-color: darkgoldenrod;
+  height: 5px; 
+}
+
+
+.selector{
+  background-color: #fff;
+	border-color:hsl(255, 33%, 93%);
+	outline: none;
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+  box-shadow: 0 0 5px rgba(109,207,246,.5);
+  border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	width: 300px;
+	
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+  transition: all .5s;
+  flex: 1;
+  margin-right: 50px;
+}
+
+
+.footer{
+  display: flex;
+  margin: 20px 20px;
+  justify-content: space-between;
+ }
+
+nav{
+  flex: 1;
+  font-family: inherit;
+  align-self: left;
+  max-width: 300px;
+}
+
+.disabled{
+  cursor: default;
+}
