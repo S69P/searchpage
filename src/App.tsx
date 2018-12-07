@@ -6,6 +6,7 @@ import Query from './component/Query'
 import { debounce } from 'lodash'
 import ProductsList from './component/ProductsList'
 import Footer from './component/Footer'
+import * as https from "https";
 
 interface IAppState {
   first?: string
@@ -18,6 +19,9 @@ interface IAppState {
   numberOfProducts: number
   searchActive: boolean
 }
+const agent = new https.Agent({  
+  rejectUnauthorized: false
+});
 
 class App extends React.Component<{}, IAppState> {
   constructor(props: any) {
@@ -53,7 +57,7 @@ class App extends React.Component<{}, IAppState> {
   }
 
   private search: (productsPerPage: number) => void = (productsPerPage: number) => {
-    axios.get(`https://search--api.herokuapp.com/products?keywords_like=${this.state.query}&_page=1&_limit=${productsPerPage}`)
+    axios.get(`https://search--api.herokuapp.com/products?keywords_like=${this.state.query}&_page=1&_limit=${productsPerPage}`, { httpsAgent: agent })
       .then(res => {
         this.getPaginationLInks(res.headers.link)
         this.setState({ products: res.data, numberOfProducts: res.headers['x-total-count'], productsPerPage })
@@ -61,7 +65,7 @@ class App extends React.Component<{}, IAppState> {
   }
 
   private defaltSearch: () => any = () => {
-    axios.get(`https://search--api.herokuapp.com/products?keywords_like=${this.state.query}&_page=1&_limit=${this.state.productsPerPage}`)
+    axios.get(`https://search--api.herokuapp.com/products?keywords_like=${this.state.query}&_page=1&_limit=${this.state.productsPerPage}`, { httpsAgent: agent })
       .then(res => {
         this.getPaginationLInks(res.headers.link)
         this.setState({ products: res.data, numberOfProducts: res.headers['x-total-count'], productsPerPage: this.state.productsPerPage })
@@ -92,7 +96,7 @@ class App extends React.Component<{}, IAppState> {
   }
 
   private getPaginatedProducts(productsPerPage: number, ) {
-    axios.get(`https://search--api.herokuapp.com/products?_page=1&_limit=${productsPerPage}`)
+    axios.get(`https://search--api.herokuapp.com/products?_page=1&_limit=${productsPerPage}`, { httpsAgent: agent })
       .then(res => {
         this.getPaginationLInks(res.headers.link)
         this.setState({ products: res.data, numberOfProducts: res.headers['x-total-count'], productsPerPage })
@@ -100,7 +104,7 @@ class App extends React.Component<{}, IAppState> {
   }
 
   private getInitialProducts(productsPerPage: number) {
-    axios.get(`https://search--api.herokuapp.com/products?_page=1&_limit=${productsPerPage}`)
+    axios.get(`https://search--api.herokuapp.com/products?_page=1&_limit=${productsPerPage}`, { httpsAgent: agent })
       .then(res => {
         this.getPaginationLInks(res.headers.link)
         this.setState({ products: res.data, numberOfProducts: res.headers['x-total-count'] })

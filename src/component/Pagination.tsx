@@ -13,7 +13,7 @@ export default class Pagination extends React.Component<IPaginationProps, any> {
       <nav >
         <ul className="pagination">
           <li onClick={this.props.prev ? this.props.pagination : null} value="first" className="page-item">
-            <a className={this.props.prev ? "page-link" : "page-link disabled"} >
+            <a  className={this.props.prev ? "page-link" : "page-link disabled" } >
               <span >&laquo;</span>
             </a>
           </li>
