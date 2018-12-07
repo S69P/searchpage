@@ -6,5 +6,4 @@ declare module '*.gif'
 declare module '*.bmp'
 declare module '*.tiff'
 declare module 'debounce'
-declare module 'react'
-declare module 'react-dom'
+
