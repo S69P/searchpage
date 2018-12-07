@@ -6,18 +6,19 @@ export interface IPaginationProps {
 }
 
 
+
 export default class Pagination extends React.Component<IPaginationProps, any> {
   public render() {
     return (
       <nav >
         <ul className="pagination">
-          <li onClick={this.props.prev ? this.props.pagination : null} value="first" className="page-item">
-            <a className={this.props.prev ? "page-link" : "page-link disabled"} >
+          <li onClick={this.getAction} value="first" className="page-item">
+            <a className={this.getClass()} >
               <span >&laquo;</span>
             </a>
           </li>
-          <li onClick={this.props.prev ? this.props.pagination : null} value="prev" className="page-item">
-            <a className={this.props.prev ? "page-link" : "page-link disabled"}>
+          <li onClick={this.getAction} value="prev" className="page-item">
+            <a className={this.getClass()}>
               <span>&lt;</span>
             </a>
           </li>
@@ -34,5 +35,11 @@ export default class Pagination extends React.Component<IPaginationProps, any> {
         </ul>
       </nav>
     );
+  }
+  private getAction:() => any = () =>{
+    return (this.props.prev ? this.props.pagination : null)
+  }
+  private getClass:() => any = () =>{
+    return this.props.prev ? "page-link" : "page-link disabled"
   }
 }
