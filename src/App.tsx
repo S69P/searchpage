@@ -115,6 +115,9 @@ class App extends React.Component<{}, IAppState> {
     const regex = /[<>]/gi;
     const linkArray = links.replace(regex, '').split(",")
     linkArray.forEach((link, index) => {
+      
+      link = link.replace('http', 'https')
+      
       if (link.includes("first")) {
         const first = link.split(";")[0]
         this.setState({ first })
@@ -130,6 +133,7 @@ class App extends React.Component<{}, IAppState> {
       }
 
     })
+    
 
   }
 
