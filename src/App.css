@@ -114,8 +114,9 @@ input::-webkit-input-placeholder {
   width: 190px;
   height: 190px;
   flex: 0; 
-  align-self: center;
+  align-self:  center;
   padding-left: 12px;
+  padding-top: 20px;
 
 }
 
